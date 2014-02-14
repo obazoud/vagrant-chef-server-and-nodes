@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+set -x
+
+echo "10.1.1.10 chef-server.example.com" >> /etc/hosts
+echo "10.1.1.11 chef-workstation.example.com" >> /etc/hosts
+echo "10.1.1.12 chef-node.example.com" >> /etc/hosts
+
+rpm --import http://apt.sw.be/RPM-GPG-KEY.dag.txt
+rpm -Uvh /vagrant/rpmforge-release-0.5.2-2.el5.rf.x86_64.rpm
+
+yum install wget curl git vim-common vim-enhanced vim-minimal -y
+
+mkdir /root/.ssh
+cp -f /vagrant/keys/vagrant /root/.ssh/id_rsa
+chmod 600 /root/.ssh/id_rsa
+echo /vagrant/keys/vagrant.pub > /root/.ssh/authorized_keys
