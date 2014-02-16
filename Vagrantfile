@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
     chef_server.ssh.forward_agent = true
 
     chef_server.vm.provision :shell do |shell|
-      shell.path = "bootstrap/bootstrap-chef-server.sh"
+      shell.path = "bin/bootstrap/chef-server.sh"
     end
 
   end
@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
     chef_workstation.ssh.forward_agent = true
 
     chef_workstation.vm.provision :shell do |shell|
-      shell.path = "bootstrap/bootstrap-chef-workstation.sh"
+      shell.path = "bin/bootstrap/chef-workstation.sh"
     end
 
   end
@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
     chef_node.vm.network :private_network, ip: "10.1.1.12", netmask: "255.255.255.0"
 
     chef_node.vm.provision :shell do |shell|
-      shell.path = "bootstrap/bootstrap-chef-node.sh"
+      shell.path = "bin/bootstrap/chef-node.sh"
     end
 
   end
