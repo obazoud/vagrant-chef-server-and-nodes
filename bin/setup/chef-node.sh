@@ -11,5 +11,4 @@ echo "log_level        :info" | sudo tee -a /etc/chef/client.rb
 echo "log_location     STDOUT" | sudo tee -a /etc/chef/client.rb
 echo "chef_server_url  'https://chef-server.example.com'" | sudo tee -a /etc/chef/client.rb
 
-sudo knife node list
 sudo chef-client
