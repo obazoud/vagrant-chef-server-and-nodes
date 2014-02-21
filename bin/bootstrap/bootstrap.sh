@@ -9,7 +9,7 @@ echo "10.1.1.12 chef-node.example.com" >> /etc/hosts
 
 echo "Installing rpmforge..."
 rpm --import http://apt.sw.be/RPM-GPG-KEY.dag.txt
-rpm -Uvh /vagrant/rpmforge-release-0.5.2-2.el5.rf.x86_64.rpm
+rpm -Uvh /vagrant/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
 
 echo "Installing somes packages..."
 yum install wget curl git vim-common vim-enhanced vim-minimal -y

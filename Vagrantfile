@@ -2,8 +2,8 @@
 Vagrant.require_version ">= 1.4.3"
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "opscode-centos-5.9"
-  config.vm.box_url = "https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-5.9_provisionerless.box"
+  config.vm.box = "opscode-centos-6.5"
+  config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.5_chef-provisionerless.box"
 
   config.vm.define :chef_server do |chef_server|
     chef_server.vm.hostname = "chef-server.example.com"
